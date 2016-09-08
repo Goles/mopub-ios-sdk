@@ -71,9 +71,9 @@ static NSString *const kMPVungleAdUserDidDownloadKey = @"didDownload";
     // Need to check immediately as an ad may be cached.
     if ([[VungleSDK sharedSDK] isAdPlayable]) {
         [self.delegate vungleAdDidLoad];
+    } else {
+        [self.delegate vungleAdDidFailToLoad:nil];
     }
-
-    // MoPub timeout will handle the case for an ad failing to load.
 }
 
 - (BOOL)isAdAvailable
